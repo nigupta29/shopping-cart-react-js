@@ -1,8 +1,9 @@
-import Button from './Button'
 import { useShop } from '../context/ShopContext'
+import Button from './Button'
 
 const StockButton = ({ item }) => {
   const { dispatch } = useShop()
+  const { stock } = item
 
   return (
     <div className="btn-group__stock">
@@ -11,13 +12,12 @@ const StockButton = ({ item }) => {
         handleClick={() =>
           dispatch({ type: 'REMOVE_FROM_CART', payload: item })
         }
-        disabled={item.stock === 0}
       >{` - `}</Button>
-      <p>{item.stock}</p>
+      <p>{stock}</p>
       <Button
         type="primary"
         handleClick={() => dispatch({ type: 'ADD_TO_CART', payload: item })}
-        disabled={item.stock === 0}
+        disabled={stock === 0}
       >{` + `}</Button>
     </div>
   )

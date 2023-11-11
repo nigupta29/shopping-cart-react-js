@@ -9,6 +9,7 @@ const productReducer = (state, action) => {
       )
 
     case 'REMOVE_FROM_CART': {
+      return state
     }
 
     default:
@@ -38,6 +39,7 @@ const cartReducer = (state, action) => {
       ]
     }
     case 'REMOVE_FROM_CART': {
+      return state
     }
 
     default:
