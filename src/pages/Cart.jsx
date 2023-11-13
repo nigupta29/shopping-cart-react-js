@@ -1,9 +1,10 @@
-import Logo from '../components/Logo'
+import CardList from '../components/CartList'
 
 const Cart = () => {
   return (
-    <div>
-      <h4>Cart Details</h4>
+    <div className="cart-main">
+      <h2>Cart Details</h2>
+      <CardList />
     </div>
   )
 }

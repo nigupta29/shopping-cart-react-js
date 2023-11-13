@@ -11,3 +11,12 @@ export const createRandomProduct = () => {
     rating: faker.number.int({ min: 1, max: 5 })
   }
 }
+
+// {
+//   "id": "e69f2297-4fc0-4050-93f7-8027edb27288",
+//   "title": "Oriental Concrete Sausages",
+//   "img_src": "https://loremflickr.com/640/480/abstract?lock=5109053539745792",
+//   "price": "642.00",
+//   "stock": 4,
+//   "quantity": 1
+// }
