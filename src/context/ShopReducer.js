@@ -3,7 +3,7 @@ const productReducer = (state, action) => {
     case 'ADD_TO_CART':
       // Reduce the stock of the product when added to the cart
       return state.map((product) =>
-        product.id === action.payload.id
+        product.id === action.payload.id && product.stock !== 0
           ? { ...product, stock: product.stock - 1 }
           : product
       )
@@ -29,7 +29,7 @@ const cartReducer = (state, action) => {
       // Check if the product is already in the cart
       if (existingItem) {
         return state.map((item) =>
-          item.id === action.payload.id
+          item.id === action.payload.id && item.stock !== 0
             ? { ...item, quantity: item.quantity + 1, stock: item.stock - 1 }
             : item
         )
@@ -44,6 +44,8 @@ const cartReducer = (state, action) => {
     }
     case 'REMOVE_FROM_CART': {
       const existingItem = state.find((item) => item.id === action.payload.id)
+
+      if (existingItem === undefined) return state
 
       if (existingItem.quantity === 1) {
         return state.filter((item) => item.id !== existingItem.id)
