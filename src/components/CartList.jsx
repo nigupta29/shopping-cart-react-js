@@ -5,7 +5,7 @@ const CartList = () => {
   const { cart } = useShop()
 
   return (
-    <ul className="cart-list">
+    <ul className="flex-grow">
       {cart.map((item) => (
         <CartListItem key={item.id} item={item} />
       ))}

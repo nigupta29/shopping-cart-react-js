@@ -1,15 +1,11 @@
-import Container from '../components/Container'
-import FilterSection from '../components/FilterSection'
 import ProductsList from '../components/ProductsList'
+import PageLayout from '../layouts/PageLayout'
 
 const Home = () => {
   return (
-    <div className="display">
-      <FilterSection />
-      <main className="display-main">
-        <ProductsList />
-      </main>
-    </div>
+    <PageLayout title={'Trending Products'}>
+      <ProductsList />
+    </PageLayout>
   )
 }
 
