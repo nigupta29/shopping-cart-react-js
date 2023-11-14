@@ -45,6 +45,8 @@ const cartReducer = (state, action) => {
     case 'REMOVE_FROM_CART': {
       const existingItem = state.find((item) => item.id === action.payload.id)
 
+      if (existingItem === undefined) return state
+
       if (existingItem.quantity === 1) {
         return state.filter((item) => item.id !== existingItem.id)
       }

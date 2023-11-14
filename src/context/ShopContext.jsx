@@ -23,13 +23,19 @@ export const ShopProvider = ({ children }) => {
     0
   )
 
+  const checkIfProductInCart = (id) => {
+    const existingItem = shopState.cart.find((item) => item.id === id)
+    return existingItem !== undefined
+  }
+
   return (
     <ShopContext.Provider
       value={{
         ...shopState,
         dispatch,
         cartItemCount,
-        cartTotalAmount
+        cartTotalAmount,
+        checkIfProductInCart
       }}
     >
       {children}
