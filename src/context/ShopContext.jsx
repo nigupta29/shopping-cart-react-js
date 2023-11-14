@@ -18,7 +18,7 @@ export const ShopProvider = ({ children }) => {
     0
   )
 
-  const cartTotalAmount = shopState.cart.reduce(
+  const cartSubTotalAmount = shopState.cart.reduce(
     (count, { quantity, price }) => count + quantity * price,
     0
   )
@@ -34,7 +34,7 @@ export const ShopProvider = ({ children }) => {
         ...shopState,
         dispatch,
         cartItemCount,
-        cartTotalAmount,
+        cartSubTotalAmount,
         checkIfProductInCart
       }}
     >

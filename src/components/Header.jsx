@@ -4,7 +4,7 @@ import { useShop } from '../context/ShopContext'
 import Logo from './Logo'
 
 const Header = () => {
-  const { cartItemCount, cartTotalAmount } = useShop()
+  const { cartItemCount, cartSubTotalAmount } = useShop()
 
   return (
     <header className="navbar bg-base-100 space-x-10 p-5 justify-between sticky top-0 z-10">
@@ -31,7 +31,7 @@ const Header = () => {
             <span className="font-bold text-lg">{`${cartItemCount} Item${
               cartItemCount !== 1 ? 's' : ''
             }`}</span>
-            <span className="text-info">{`Subtotal : Rs.${cartTotalAmount}`}</span>
+            <span className="text-info">{`Subtotal : Rs.${cartSubTotalAmount}`}</span>
             <div className="card-actions">
               <Link to="cart">
                 <span className="btn btn-sm btn-warning">Go to Cart</span>

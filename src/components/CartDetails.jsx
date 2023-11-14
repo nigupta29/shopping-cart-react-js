@@ -1,7 +1,7 @@
 import { useShop } from '../context/ShopContext'
 
 const CartDetails = () => {
-  const { cart, cartTotalAmount } = useShop()
+  const { cart, cartSubTotalAmount } = useShop()
 
   return (
     <aside className="lg:w-4/12 space-y-5">
@@ -13,9 +13,17 @@ const CartDetails = () => {
             <p>{`${item.quantity} x Rs.${item.price}`}</p>
           </li>
         ))}
+        <li className="flex flex-row justify-between text-base-content font-bold my-5 border-t pt-2">
+          <p>Subtotal</p>
+          <p>{`Rs. ${Number(cartSubTotalAmount).toFixed(2)}`}</p>
+        </li>
+        <li className="flex flex-row justify-between text-base-content font-bold my-5">
+          <p>Tax - 18%</p>
+          <p>{`(+) Rs. ${Number(cartSubTotalAmount * 0.18).toFixed(2)}`}</p>
+        </li>
         <li className="flex flex-row justify-between text-secondary font-bold my-5 border-t-2 pt-2">
           <p>Total</p>
-          <p>{`Rs. ${cartTotalAmount}`}</p>
+          <p>{`Rs. ${Number(cartSubTotalAmount * 1.18).toFixed(2)} `}</p>
         </li>
       </ul>
     </aside>
