@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { ShopProvider } from './context/ShopContext'
@@ -8,7 +8,7 @@ import Home from './pages/Home'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ShopProvider>
         <div className="flex flex-col justify-between min-h-screen">
           <Container>
@@ -21,7 +21,7 @@ const App = () => {
           <Footer />
         </div>
       </ShopProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
